@@ -36,7 +36,7 @@ elastic_pid_dir = config['configurations']['elastic-env']['elastic_pid_dir']
 elastic_pid_file = format("{elastic_pid_dir}/elasticsearch.pid")
 
 elastic_install_log = elastic_base_dir + '/elasticsearch-install.log'
-elastic_download = 'https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.2.0.tar.gz'
+elastic_download = 'https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.5.2.tar.gz'
 
 cluster_name = config['configurations']['elastic-config']['cluster_name']
 hostname = config['hostname']
@@ -75,11 +75,3 @@ if action_destructive_requires_name == 'True':
     action_destructive_requires_name = 'true'
 else:
     action_destructive_requires_name = 'false'
-
-#xpack_security_enabled = str(config['configurations']['elastic-config']['xpack_security_enabled'])
-
-# Elasticsearch expects boolean values to be true or false and will generate an error if you use True or False.
-#if xpack_security_enabled == 'True':
-#    xpack_security_enabled = 'true'
-#else:
-#    xpack_security_enabled = 'false'

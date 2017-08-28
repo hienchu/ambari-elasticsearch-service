@@ -108,18 +108,9 @@ class Master(Script):
         #cmd = format("{elastic_base_dir}/bin/elasticsearch-plugin install mobz/elasticserach-head")
         #Execute(cmd)
 
-        # Attempt to remove X-Pack plugin
-        cmd = format("{elastic_base_dir}/bin/elasticsearch-plugin remove x-pack")
-        #Execute(cmd)
-
-        # Install X-Pack plugin
-        cmd = format("{elastic_base_dir}/bin/elasticsearch-plugin install x-pack")
-        #Execute(cmd)
-
         # Ensure all files owned by elasticsearch user
         cmd = format("chown -R {elastic_user}:{elastic_group} {elastic_base_dir}")
         Execute(cmd)
-
         Execute('echo "Configuration complete"')
 
     def stop(self, env):
